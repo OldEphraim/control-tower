@@ -267,8 +267,7 @@ docker-compose ps
 # Expected: pct-sqlserver, pct-postgres, pct-mongodb all show "healthy" or "running"
 
 # 3. Test SQL Server
-docker exec pct-sqlserver /opt/mssql-tools18/bin/sqlcmd \
-  -S localhost -U sa -P 'PilotbaseDev123!' -Q "SELECT 'SQL Server OK'" -No
+docker exec pct-sqlserver bash -c 'PASS=$(printenv SA_PASSWORD) && /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "$PASS" -Q "SELECT '"'"'SQL Server OK'"'"'" -No'
 # Expected: SQL Server OK
 
 # 4. Test PostgreSQL

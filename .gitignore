@@ -1,0 +1,30 @@
+# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/.vs/
+backend/**/.idea/
+
+# Node
+node_modules/
+dist/
+.angular/
+*.local
+.vite/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+**/appsettings.Development.json
+**/appsettings.*.json
+!**/appsettings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test results
+**/TestResults/
+coverage/
+lcov.info
